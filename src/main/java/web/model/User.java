@@ -1,6 +1,7 @@
 package web.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 
 @Entity
@@ -55,6 +56,19 @@ public class User {
 
     public void setAge(byte age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age && Objects.equals(Id, user.Id) && Objects.equals(name, user.name) && Objects.equals(lastname, user.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id, name, lastname, age);
     }
 
     @Override
