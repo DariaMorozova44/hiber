@@ -14,13 +14,11 @@ public class UserDaoimpl implements UserDao {
     private EntityManager entityManager;
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 
     @Override
-    @Transactional
     public User getUserById(long id) {
         return entityManager.find(User.class,id);
     }
