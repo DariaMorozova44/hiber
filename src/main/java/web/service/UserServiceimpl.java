@@ -23,13 +23,11 @@ public class UserServiceimpl implements UserService {
     }
 
     @Override
-    @Transactional
     public void addUser(User user) {
         userDao.addUser(user);
     }
 
     @Override
-    @Transactional
     public void deleteUser(long id) {
         userDao.deleteUser(id);
 
@@ -37,7 +35,6 @@ public class UserServiceimpl implements UserService {
 
 
     @Override
-    @Transactional
     public void editUser(User user) {
         userDao.editUser(user);
     }
