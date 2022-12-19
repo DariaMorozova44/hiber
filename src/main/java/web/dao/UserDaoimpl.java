@@ -24,20 +24,17 @@ public class UserDaoimpl implements UserDao {
     }
 
     @Override
-    @Transactional
     public void addUser(User user) {
         entityManager.persist(user);
     }
 
 
     @Override
-    @Transactional
     public void deleteUser(Long id) {
         entityManager.remove(getUserById(id));
     }
 
     @Override
-    @Transactional
     public void editUser(User user){
         entityManager.merge(user);
     }
